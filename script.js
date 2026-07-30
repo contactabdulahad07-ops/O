@@ -60,3 +60,78 @@ alert("🎉 Welcome Falak ❤️");
 // Part 4 mein Game Screen open hogi.
 
 });
+// ================= GAME =================
+
+const gameScreen = document.getElementById("gameScreen");
+const gameArea = document.getElementById("gameArea");
+const scoreText = document.getElementById("score");
+
+let score = 0;
+
+// Surprise Button
+
+surpriseBtn.addEventListener("click",()=>{
+
+welcomeScreen.classList.remove("active");
+
+gameScreen.classList.add("active");
+
+startGame();
+
+});
+
+function startGame(){
+
+score=0;
+
+scoreText.innerHTML="0 / 10";
+
+gameArea.innerHTML="";
+
+let interval=setInterval(createHeart,700);
+
+function createHeart(){
+
+const heart=document.createElement("div");
+
+heart.className="heart";
+
+heart.innerHTML="❤️";
+
+heart.style.left=Math.random()*250+"px";
+
+gameArea.appendChild(heart);
+
+heart.onclick=()=>{
+
+score++;
+
+scoreText.innerHTML=score+" / 10";
+
+heart.remove();
+
+if(score>=10){
+
+clearInterval(interval);
+
+setTimeout(()=>{
+
+alert("🎉 You Win ❤️");
+
+// Part 5 mein Cake Cutting Screen open hogi.
+
+},700);
+
+}
+
+};
+
+setTimeout(()=>{
+
+heart.remove();
+
+},4000);
+
+}
+
+}
