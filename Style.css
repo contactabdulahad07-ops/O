@@ -384,3 +384,52 @@ margin-top:15px;
 font-size:25px;
 
   }
+/* Cake Scene */
+
+.cake-box{
+
+margin:25px 0;
+
+}
+
+.candles{
+
+font-size:35px;
+
+margin-bottom:10px;
+
+animation:flicker .6s infinite alternate;
+
+}
+
+#birthdayCake{
+
+width:220px;
+
+transition:.5s;
+
+}
+
+.cake-cut{
+
+transform:scale(.95) rotate(-2deg);
+
+filter:brightness(.9);
+
+}
+
+@keyframes flicker{
+
+0%{
+
+opacity:1;
+
+}
+
+100%{
+
+opacity:.5;
+
+}
+
+}
