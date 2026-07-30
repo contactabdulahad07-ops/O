@@ -135,3 +135,41 @@ heart.remove();
 }
 
 }
+// ================= CAKE SCREEN =================
+
+const cakeScreen = document.getElementById("cakeScreen");
+const birthdayCake = document.getElementById("birthdayCake");
+const cutCakeBtn = document.getElementById("cutCakeBtn");
+
+// Game Complete
+
+function openCakeScene(){
+
+gameScreen.classList.remove("active");
+
+cakeScreen.classList.add("active");
+
+}
+
+// Game Win
+
+// Part 4 mein jahan alert("🎉 You Win ❤️") hai,
+// usko remove karke sirf ye likho:
+//
+// openCakeScene();
+
+cutCakeBtn.addEventListener("click",()=>{
+
+birthdayCake.classList.add("cake-cut");
+
+cutCakeBtn.innerHTML="🎉 Cake Cut Successfully";
+
+setTimeout(()=>{
+
+alert("🎂 Happy Birthday Falak My Love ❤️");
+
+// Part 6 mein Promise Screen open hogi.
+
+},1000);
+
+});
